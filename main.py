@@ -1,12 +1,10 @@
 import numpy as np
 from collections import deque
 
-
 def lire_contraintes(fichier):
     with open(fichier, 'r') as f:
         contraintes = [list(map(int, ligne.split())) for ligne in f.readlines()]
     return contraintes
-
 
 def creer_matrice(contraintes):
     N = len(contraintes)
@@ -51,7 +49,6 @@ def afficher_matrice_formattee(matrice):
                 print(f"{cell:>3}", end=" ")
         print()
 
-
 def verifier_proprietes(matrice):
     # Vérifier qu'il n'y a pas de valeurs négatives
     if np.any(matrice < 0):
@@ -75,7 +72,6 @@ def verifier_proprietes(matrice):
         etats[u] = 2
 
     return True
-
 
 def calculer_rangs(matrice):
     N = len(matrice)
